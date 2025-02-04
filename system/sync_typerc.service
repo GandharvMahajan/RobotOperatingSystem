@@ -1,0 +1,10 @@
+[Unit]
+Description=Sync TypeRC Service
+
+[Service]
+ExecStart=/home/pi/mentorpi/tool/.sync_typerc.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,18 @@
+[Unit]
+Description=Button Scan Service
+After=network.target  
+
+[Service]
+Type=simple
+User=pi
+ExecStartPre=-/bin/sleep 5
+ExecStart=/usr/bin/python3 /home/pi/hiwonder-toolbox/button_scan.py
+WorkingDirectory=/home/pi/hiwonder-toolbox
+Restart=always            
+RestartSec=3              
+StandardOutput=journal    
+StandardError=journal     
+
+[Install]
+WantedBy=multi-user.target
+

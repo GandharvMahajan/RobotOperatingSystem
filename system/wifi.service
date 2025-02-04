@@ -1,0 +1,19 @@
+[Unit]
+Description=WiFi Service
+After=NetworkManager.service
+
+[Service]
+Type=simple
+ExecStartPre=/bin/sleep 15
+ExecStart=/home/pi/hiwonder-toolbox/wifi.py
+Restart=on-failure
+RestartSec=10
+StartLimitIntervalSec=60
+StartLimitBurst=5
+TimeoutStartSec=30
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
+
